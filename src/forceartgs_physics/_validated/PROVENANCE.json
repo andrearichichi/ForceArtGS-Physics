@@ -1,0 +1,241 @@
+{
+ "generator": "tools/vendor_validated.py",
+ "roots": {
+  "cmp": "comparison/freeartgs_all_objects",
+  "akf": "AKF_PINN"
+ },
+ "akf_pinn_whole_files": {
+  "akf_pinn/config.py": {
+   "origin": "AKF_PINN/src/akf_pinn/config.py",
+   "sha256": "bb67b9a0be8dd4b8119048fed022c161d72c2e3ca65c6835591a1da27c59f93f",
+   "patches": [
+    "Python-3.10 guard around `import tomllib` (used only by the unused load_config)"
+   ]
+  },
+  "akf_pinn/physics/__init__.py": {
+   "origin": "AKF_PINN/src/akf_pinn/physics/__init__.py",
+   "sha256": "c9ba1a56817a3fae08e393de86110ee3556f95d1556335735f8948c6a177366b",
+   "patches": []
+  },
+  "akf_pinn/physics/common.py": {
+   "origin": "AKF_PINN/src/akf_pinn/physics/common.py",
+   "sha256": "199cc2e44dc776cc945250796cc370de936779adc075afe589e9ca40d4f0e3db",
+   "patches": []
+  },
+  "akf_pinn/physics/dynamics.py": {
+   "origin": "AKF_PINN/src/akf_pinn/physics/dynamics.py",
+   "sha256": "0c7431e1a4287193300ab641b66fc4358c2fec4e7301854dce5332c1e16cec68",
+   "patches": [
+    "absolute `from akf_pinn.` imports rewritten as package-relative imports"
+   ]
+  },
+  "akf_pinn/physics/integrator.py": {
+   "origin": "AKF_PINN/src/akf_pinn/physics/integrator.py",
+   "sha256": "0ccdda1b18ec153a0cb2aaed1466145eb2f07a085624c9967274889a21341cd4",
+   "patches": []
+  },
+  "akf_pinn/physics/interpolation.py": {
+   "origin": "AKF_PINN/src/akf_pinn/physics/interpolation.py",
+   "sha256": "396e9ccd833d114c3bbf37ab0dc15677f1d8614941121158bcd495ea65c5ddf0",
+   "patches": []
+  },
+  "akf_pinn/data/interaction.py": {
+   "origin": "AKF_PINN/src/akf_pinn/data/interaction.py",
+   "sha256": "6d529c8f4d97c8efaca5addbf808d2166bccca55519c8ace02039988db622c23",
+   "patches": [
+    "absolute `from akf_pinn.` imports rewritten as package-relative imports"
+   ]
+  },
+  "akf_pinn/filters/augmented_ekf.py": {
+   "origin": "AKF_PINN/src/akf_pinn/filters/augmented_ekf.py",
+   "sha256": "a736c6e610f5ec81ebdf71dcb13301790d1e668643d3fb2e7eac52207127d4bc",
+   "patches": [
+    "absolute `from akf_pinn.` imports rewritten as package-relative imports"
+   ]
+  },
+  "akf_pinn/pinn/network.py": {
+   "origin": "AKF_PINN/src/akf_pinn/pinn/network.py",
+   "sha256": "7bdb9749abf19b669b0ccf00c54e5d2db7e8f87dce3bd7d5887ca4f84931daab",
+   "patches": []
+  },
+  "akf_pinn/pinn/derivatives.py": {
+   "origin": "AKF_PINN/src/akf_pinn/pinn/derivatives.py",
+   "sha256": "897e621171877e2025409dc2c7992a0df980e7a4e2a2e36fb6d5acec6818ad81",
+   "patches": []
+  }
+ },
+ "modules": {
+  "observation.py": {
+   "origin": "AKF_PINN/experiments/evaluation_v2/dataset.py",
+   "sha256": "ffd1dd05dc44a83a31a69cbd89324a61100dfa469062877438250ac9f4216f0c",
+   "names": [
+    "Privilege",
+    "Observation"
+   ]
+  },
+  "estimators.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/estimators.py",
+   "sha256": "bbf588ff6329dce614b5a759972206908944a28c6a9d809e9621dbaf3b33d6ca",
+   "names": [
+    "DT",
+    "Window",
+    "MLP_PRIOR",
+    "_features",
+    "_observation"
+   ]
+  },
+  "expB_cells.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/expB/expB_cells.py",
+   "sha256": "460966c65d274afc8e60f42e2247a6ccde68f489084c3f5c317e665a521be60c",
+   "names": [
+    "DT",
+    "effort_on_force_grid",
+    "zoh_basis",
+    "_ls_offset_velocity",
+    "MLP_PRIOR"
+   ]
+  },
+  "improved_methods.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/improved/methods.py",
+   "sha256": "b3fef35ef36cd1587f5385af75848385315c4e82c1aa1ea9e4dfe9c1caf46c7a",
+   "names": [
+    "force_knots"
+   ]
+  },
+  "cells_C.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/freeartgs_only/cells_C.py",
+   "sha256": "2ed11bc96724000829d4a99223e05f9c0efe31bb6cdca706e19197fcc22dadd5",
+   "names": [
+    "DT",
+    "observation",
+    "compress_zoh"
+   ]
+  },
+  "pinn_nd.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/final_benchmark/pinn_nd.py",
+   "sha256": "ee5032916e9cc5b774fd4c966407cdc035a70b290506ca7783eea92b339923f4",
+   "names": [
+    "DT",
+    "nondimensionalize"
+   ]
+  },
+  "mlp_joint.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/mlp_joint/mlp_joint.py",
+   "sha256": "cd5966c07fa979857fb0397663f58c7d1fcdff2aa3fd11a9f8c1e8aedb3ccda6",
+   "names": [
+    "DT",
+    "zoh_basis",
+    "Config",
+    "_clean",
+    "_noise",
+    "synth_training_q",
+    "synth_validation",
+    "Context",
+    "MLPJoint",
+    "project",
+    "losses",
+    "train",
+    "robust_noise_var",
+    "blend",
+    "infer",
+    "save_checkpoint",
+    "load_checkpoint"
+   ]
+  },
+  "common.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/controlled_fairness/common.py",
+   "sha256": "02b52c6d13f89fc2eac32ef6eb85a7fd2828f2f05422b24b7b3aebb54d65e151",
+   "names": [
+    "DT",
+    "SUPPORT",
+    "WIDE",
+    "sha",
+    "save",
+    "normalize",
+    "ls",
+    "grid",
+    "prior",
+    "restore"
+   ]
+  },
+  "cpu.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/controlled_fairness/cpu.py",
+   "sha256": "a3383561cffdfe63229849b75723e33418369c026a4aabc20f42aae94c7af270",
+   "names": [
+    "backprop",
+    "akf"
+   ]
+  },
+  "mlp.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/controlled_fairness/mlp.py",
+   "sha256": "e952bbfc4a6cf71bd3570191e398a23c7f7c13fb9c179a4aebad0d19b6941cb8",
+   "names": [
+    "train"
+   ]
+  },
+  "pinn_v2.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/robust_v2/pinn_v2.py",
+   "sha256": "ebe3f2f77185d3fee4e0d3767cf6db5e6d3a7b7fa5635c43ca043623da9916f9",
+   "names": [
+    "DT",
+    "V2Config",
+    "force_knots",
+    "cumulative_effort",
+    "collocation",
+    "run"
+   ]
+  },
+  "run_v2.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/robust_v2/run_v2.py",
+   "sha256": "bbc2e47452d0a9d12b77105c0dbea4593ea714d4aeba1eb87ed94f78003b8995",
+   "names": [
+    "VARIANTS"
+   ]
+  },
+  "dev_probe.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/akf_a3/dev_probe.py",
+   "sha256": "ffa00551339f4f8e8a75d5aa4bab140d134a172fc0502609c1b303114a834715",
+   "names": [
+    "base_cfg",
+    "native_select",
+    "replay",
+    "run_variant"
+   ]
+  },
+  "akf_variants.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/akf_a3/akf_variants.py",
+   "sha256": "24c7f49aebc19ec43ed6553ae63f6613002fb56a6028886925c79951d3a55336",
+   "names": [
+    "M_R",
+    "P0",
+    "INIT_PERTURB",
+    "fit_grid"
+   ]
+  },
+  "replay.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/oneplus10/replay.py",
+   "sha256": "10be322b76c04dba836e07bb429137e0b5802485fb880b89c1dbb5d746592cfe",
+   "names": [
+    "zoh_levels",
+    "propagate",
+    "effort"
+   ]
+  },
+  "q_sign.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/freeartgs_only/build_inputs_C.py",
+   "sha256": "a7692c53e4637395162f9d3d997c859d9859f566463d7a10254f525d78c4b831",
+   "names": [
+    "effort",
+    "double_integral_zoh",
+    "q_sign_from_force"
+   ]
+  },
+  "identifiability_rv2.py": {
+   "origin": "comparison/freeartgs_all_objects/force_estimators/robust_v2/identifiability.py",
+   "sha256": "ed6a5c629af0f0254851bb465c63889c1876a89f4ecb6b86b084fc9e08e4538b",
+   "names": [
+    "solve"
+   ]
+  }
+ }
+}

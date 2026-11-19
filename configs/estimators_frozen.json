@@ -1,0 +1,167 @@
+{
+ "PINN": {
+  "default_seeds": [
+   0,
+   1,
+   2
+  ],
+  "frozen_hyperparameters": {
+   "variant": "V2",
+   "residual": "integral",
+   "scale": "normalized",
+   "init": "ls",
+   "stage": 2000,
+   "colloc": "uniform",
+   "hidden_layers": 4,
+   "hidden_width": 64,
+   "adam_iterations": 20000,
+   "adam_lr": 0.001,
+   "lbfgs_iterations": 10000,
+   "lbfgs_chunk_iterations": 100,
+   "lbfgs_max_eval_per_chunk": 125,
+   "lbfgs_tolerance_grad": 1e-08,
+   "lbfgs_tolerance_change": 1e-14,
+   "physics_points": 4096,
+   "convergence_relative_loss": 1e-06,
+   "convergence_relative_parameter": 0.0001,
+   "convergence_gradient": 1e-06
+  },
+  "provenance": {
+   "code": "force_estimators/robust_v2/pinn_v2.py::run",
+   "config": "run_v2.VARIANTS['V2']",
+   "freeze": "results/force_estimators_cvpr_robust_v2/protocol/METHODS_FREEZE.json",
+   "driver": "robust_v2/run_heldout.py"
+  }
+ },
+ "Backprop": {
+  "default_seeds": [
+   0
+  ],
+  "frozen_hyperparameters": {
+   "starts": "7x5 grid on SUPPORT",
+   "support": [
+    [
+     -3.0,
+     3.0
+    ],
+    [
+     -2.0,
+     2.0
+    ]
+   ],
+   "adam_steps": 3000,
+   "adam_lr": 0.05,
+   "lbfgsb_top_k": 8,
+   "lbfgsb_maxiter": 500,
+   "device": "cpu"
+  },
+  "provenance": {
+   "code": "force_estimators/controlled_fairness/cpu.py::backprop",
+   "variant": "primary",
+   "driver": "controlled_fairness/run.py::execute via robust_v2/run_heldout.py"
+  }
+ },
+ "MLP": {
+  "default_seeds": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "frozen_hyperparameters": {
+   "variant": "primary",
+   "n_synth": 20000,
+   "epochs": 200,
+   "noise": "mixture",
+   "lambda_phys": 0.3,
+   "prior": {
+    "log10_inertia": [
+     -3.0,
+     3.0
+    ],
+    "log10_decay_time_s": [
+     -2.0,
+     2.0
+    ],
+    "v0_fraction_of_max_forced_velocity": [
+     -1.0,
+     1.0
+    ],
+    "log10_rel_noise": [
+     -4.0,
+     -1.5228787452803376
+    ]
+   },
+   "rho_max": 0.95,
+   "n_partitions": 4,
+   "window": 3,
+   "motion_hidden": 128,
+   "batch": 512,
+   "lr": 0.001,
+   "weight_decay": 1e-05,
+   "patience": 40
+  },
+  "provenance": {
+   "code": "force_estimators/controlled_fairness/mlp.py::train + mlp_joint/mlp_joint.py",
+   "variant": "primary",
+   "driver": "controlled_fairness/run.py::execute via robust_v2/run_heldout.py"
+  }
+ },
+ "AKF": {
+  "default_seeds": [
+   0
+  ],
+  "frozen_hyperparameters": {
+   "start": "shared integral-LS (I, c), q0 = first observation",
+   "m_R": [
+    1,
+    2,
+    5,
+    10,
+    20,
+    50,
+    100
+   ],
+   "P0": {
+    "ln100": 4.605170185988092,
+    "ln10": 2.302585092994046
+   },
+   "selection": "min open-loop replay nRMSE on training data",
+   "process_noise": "position 0.1 sigma, velocity sigma, parameters 0",
+   "sigma": "robust local-interpolation noise of q (mlp_joint.robust_noise_var), floor 1e-4",
+   "max_step": "1/240 s",
+   "device": "cpu"
+  },
+  "provenance": {
+   "code": "force_estimators/akf_a3/akf_variants.py (AKF-improved) + akf_a3/dev_probe.py + akf_pinn",
+   "results": "results/forcesapien_a3_akf",
+   "protocol": "AKF_A3_PROTOCOL.md"
+  }
+ },
+ "AKF-benchmark": {
+  "default_seeds": [
+   0
+  ],
+  "frozen_hyperparameters": {
+   "starts": "7x5 grid on SUPPORT, innovation NLL",
+   "R": "sigma",
+   "P0": "ln 100",
+   "device": "cpu"
+  },
+  "provenance": {
+   "code": "force_estimators/controlled_fairness/cpu.py::akf",
+   "variant": "primary",
+   "note": "the AKF row of results/forcesapien_a3/A3_RESULTS.md (superseded by AKF-improved)"
+  }
+ },
+ "IntegralLS": {
+  "default_seeds": [
+   0
+  ],
+  "frozen_hyperparameters": {},
+  "provenance": {
+   "code": "force_estimators/controlled_fairness/common.py::ls"
+  }
+ }
+}

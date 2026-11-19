@@ -1,0 +1,23 @@
+--- /dev/null
++++ b/docs/physics_downstream_contract.md
+@@ -0,0 +1,20 @@
++# Downstream physics contract (proposal from ForceArtGS-Physics)
++
++ForceArtGS-Physics (dynamics identification of the discovered joint) reads Level A
++(`joint_authority/v*/authority.json` + `joint_states.npz`) or Level B (`joint_candidates.json`) unchanged.
++The points below would remove manual steps on the physics side. None of them changes the joint-discovery algorithm.
++
++1. Timestamps (gap G2). Export, per model time, the LeRobot parquet `timestamp` next to `timestamp_s`
++   (= source_frame_index / fps), and a measured camera-to-robot lag if available.
++2. Sign pairing (gap G7). Canonicalise `q_R` / `q_P` (and `qdot_*`) in `joint_states.npz` with the same
++   `canonicalize_sign` used for `joint_candidates.json`, or store the raw axis next to them. Today the npz
++   carries the raw sign while the JSON carries the canonical sign.
++3. Object-side force (gap G3). When `WrenchCalibration.readiness()` passes, export the tared, rotated,
++   sign-flipped force on the object in W (`f_obj_w`, N) with `contact_valid` and the calibration gates,
++   e.g. `robot/object_force_world.npz {timestamp_s, f_obj_w, p_tcp_w, contact_valid}`.
++4. Torque reference (gap G4). Document the sensor torque origin in `robot_tool.json` (`wrench_frame.torque_origin_ee_m`).
++5. Uncertainty (gap G5). Export the camera-to-base registration covariance and the TCP-to-surface residual at contact.
++6. Limits (gap G6). Keep observed range and mechanical limits separate (already required by the PArtTwin spec).
++7. Frames (gap G8). State in `docs/joint_aware_reconstruction.md` that `N_BW` must be read per run (it is not
++   the identity when cameras are in base_link), and that the authority (W) is the physics contract.
++8. Submodule (gap G9). Publish the `reconstruction/nerfstudio` commit with the joint-aware `articulation.json` writer.

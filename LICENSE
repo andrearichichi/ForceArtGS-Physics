@@ -1,0 +1,18 @@
+ForceArtGS-Physics v0.1.0 — licensing status
+
+No general license to use, redistribute, sublicense or publish the original
+research code or the vendored AKF_PINN code is granted by this file.
+Rights remain with their respective holders. This repository is prepared for a
+private research handoff, subject to confirmation of the contributors' rights.
+It must not be described as open source or assigned an SPDX open-source license
+until the relevant rights holders approve that license.
+
+AKF_PINN upstream has no declared license in the audited local checkout.
+Authorship records identify Andrea Richichi and samuelemara; Git authorship alone
+does not establish exclusive ownership or permission to relicense.
+See docs/PROVENANCE.md and docs/PUBLICATION_CHECKLIST.md.
+
+ForceArtGS-generated synthetic fixtures are separately attributed in
+NOTICE and tests/fixtures/README.md. The upstream Apache License 2.0 is
+preserved in third_party/ForceArtGS-LICENSE.txt. No ForceArtGS source code is
+included. External Python dependencies retain their own licenses.

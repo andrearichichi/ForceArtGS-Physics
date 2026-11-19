@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv*/
+.pytest_cache/
+# run outputs, checkpoints and scratch never belong in git
+outputs/
+runs/
+work/
+*.pt
+*.ckpt
+*.parquet
+*.npz
+!tests/fixtures/**/*.npz
+*.log
+.env
+.claude/
+
+# Licensed benchmark data must remain outside this repository.
+benchmark/
+*.whl
+*.tar.gz

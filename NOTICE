@@ -1,0 +1,21 @@
+ForceArtGS-Physics 0.1.0
+Prepared by Andrea Richichi for private research handoff to Samuele Mara.
+
+AKF_PINN: https://github.com/SamueleMara/AKF_PINN
+Local audited HEAD: d0830c4fcd23791b2a8d4f6ab45b1184910d94ca
+Contributors recorded in local Git: Andrea Richichi, samuelemara.
+No upstream LICENSE/NOTICE or license metadata was found. Do not infer MIT,
+Apache-2.0 or other redistribution permission. The exact copied file origins,
+SHA-256 hashes and names are in src/forceartgs_physics/_validated/PROVENANCE.json.
+Import rewrites and a Python 3.10 tomllib compatibility guard are documented in
+docs/PROVENANCE.md. No estimator algorithm changes were made for this handoff.
+
+ForceArtGS: Samuele Mara, https://github.com/SamueleMara/ForceArtGS
+Audited contract/fixtures commit: 886d49eed435e06babed8b69723082facdd4d3fb
+Synthetic generated outputs only: tests/fixtures/forceartgs_synthetic_*.
+Upstream Apache License 2.0: third_party/ForceArtGS-LICENSE.txt.
+ForceArtGS source is not distributed here.
+
+ForceSAPIEN/PartNet-Mobility: no bundle, assets, trajectories, forces, truth,
+reference-fit payloads or predictions are distributed. Historical aggregate
+research results are documented with their limitations. See docs/REDISTRIBUTION.md.

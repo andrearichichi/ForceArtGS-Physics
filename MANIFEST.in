@@ -1,0 +1,12 @@
+include LICENSE NOTICE README.md .gitignore
+recursive-include third_party *.txt
+recursive-include docs *.md *.patch
+recursive-include examples *.py
+recursive-include configs *.json
+recursive-include tests *.py *.md *.json *.npz
+recursive-include tools *.py
+recursive-include scripts *.sbatch
+prune benchmark
+prune build
+prune dist
+global-exclude __pycache__ *.py[cod] *.egg-info

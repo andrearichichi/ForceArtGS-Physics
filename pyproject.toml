@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forceartgs-physics"
+version = "0.1.0"
+description = "Physical parameter identification (inertia/mass, damping) of 1-DoF articulated objects from ForceArtGS kinematics and observed forces: PINN, Backprop, MLP and AKF estimators."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+# Versions: the reference results were produced with Python 3.11.13, torch 2.5.1+cu121, numpy 1.26.4, scipy 1.17.1.
+# CPU re-fits were bitwise identical with those versions and with torch 2.15.0 / numpy 2.2.6 (docs/REPRODUCIBILITY.md);
+# extra 'reference' pins the original versions.
+dependencies = [
+  "numpy>=1.24,<2.3",
+  "scipy>=1.10",
+  "torch>=2.1",
+]
+
+[project.optional-dependencies]
+real = ["pyarrow>=14,<26"]  # pyarrow 26 requires NumPy >=2 at runtime; NumPy 1.x remains supported.
+test = ["pytest>=7.4"]
+reference = ["numpy==1.26.4", "scipy==1.17.1", "torch==2.5.1"]
+
+[project.scripts]
+forceartgs-physics = "forceartgs_physics.cli:main"
+
+[tool.setuptools]
+license-files = ["LICENSE", "NOTICE", "third_party/*.txt"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"forceartgs_physics._validated" = ["PROVENANCE.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+  "slow: full CPU re-fits of the benchmark (minutes)",
+  "gpu: PINN/MLP re-fits (GPU recommended, tens of minutes)",
+  "original_tree: needs the original research trees (FORCEARTGS_PHYSICS_ORIGINAL_ROOT)",
+]

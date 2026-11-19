@@ -1,0 +1,41 @@
+{
+ "objects": [
+  "FoldingChair_102255",
+  "Knife_103706",
+  "Laptop_10211",
+  "Oven_101917",
+  "Refrigerator_10905",
+  "Scissors_11100",
+  "Stapler_103111",
+  "StorageFurniture_45135",
+  "USB_100109",
+  "WashingMachine_103776"
+ ],
+ "train": "A3",
+ "test": [
+  "B1",
+  "B2",
+  "B3",
+  "B4",
+  "B5",
+  "B6",
+  "B7",
+  "B8",
+  "B9",
+  "B10"
+ ],
+ "freeze": "I, c from A3",
+ "force_model_B": "tau_B = |kappa_A3| |F_B|, forward ZOH, first level held back to t=0, rest at t=0",
+ "kappa": "LS ratio of A3 generalized effort (FreeArtGS geometry) to |F_A3| over active samples",
+ "score": "nRMSE(q_pred, push_sign * q_rel_B) / range, evaluation only",
+ "aggregation": "median over seeds per B; median over B1-B10 per object; median over objects",
+ "pass_threshold_pct": 10.0,
+ "identifiability_crlb_limit_pct": 10.0,
+ "estimator_names": {
+  "PINN": "PINN-V2",
+  "Backprop": "Backprop",
+  "MLP": "MLP-Joint",
+  "AKF": "AKF-improved",
+  "AKF-benchmark": "AKF (original A3 row)"
+ }
+}

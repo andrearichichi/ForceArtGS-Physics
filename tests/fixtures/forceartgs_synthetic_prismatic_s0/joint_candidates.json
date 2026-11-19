@@ -1,0 +1,544 @@
+{
+ "candidates": {
+  "prismatic": {
+   "joint_type": "prismatic",
+   "joint_axis_world": [
+    0.0015129348319506,
+    0.9999987302906059,
+    -0.0005004451721277103
+   ],
+   "joint_origin_world": null,
+   "origin_convention": "N/A: a prismatic joint has no physical pivot",
+   "sign_convention": "(u, q) ~ (-u, -q); exported axis has a positive largest-magnitude component",
+   "q_units": "m",
+   "q": [
+    0.0,
+    -0.0032045042847449307,
+    -0.010876977861199483,
+    -0.022365207184823616,
+    -0.03617857476205847,
+    -0.052093615940169403,
+    -0.06844990644767197,
+    -0.08441556394249096,
+    -0.09844424123817977,
+    -0.10989404398007381,
+    -0.11755853443831325,
+    -0.12007894712868371
+   ],
+   "q_valid": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "q_uncertainty": [
+    0.0,
+    0.00021097268124030706,
+    0.00021362162514838122,
+    0.00020619104379507644,
+    0.0002075390921743139,
+    0.0001992779202327706,
+    0.0002016795896331321,
+    0.00019618362864690488,
+    0.0001971555792098041,
+    0.00019660933252419043,
+    0.0001941940695590776,
+    0.00019308096338517203
+   ],
+   "reference_time_index": 0,
+   "timestamps_s": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1
+   ],
+   "rgbd_frame_index": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "source_frame_index": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22
+   ],
+   "n_moving_tracks": 120,
+   "world_frame": "calibrated reconstruction world (T_WC of each physical camera)",
+   "transform_convention": "A_H(q) maps canonical (q_ref=0) world points to world points at q",
+   "diagnostics": {
+    "em_history": [
+     {
+      "iteration": 0,
+      "n_fit": 120,
+      "priors": [
+       0.693069306930693,
+       0.297029702970297,
+       0.009900990099009901
+      ],
+      "nll_before_m": -13926.886932658543,
+      "ls_cost": 2261.656282428593,
+      "nfev": 4
+     },
+     {
+      "iteration": 1,
+      "n_fit": 120,
+      "priors": [
+       0.693069306930693,
+       0.297029702970297,
+       0.009900990099009901
+      ],
+      "nll_before_m": -13926.956918519925,
+      "ls_cost": 2261.6562824431876,
+      "nfev": 4
+     },
+     {
+      "iteration": 2,
+      "n_fit": 120,
+      "priors": [
+       0.693069306930693,
+       0.297029702970297,
+       0.009900990099009901
+      ],
+      "nll_before_m": -13926.956927060051,
+      "ls_cost": 2261.656282442715,
+      "nfev": 4
+     },
+     {
+      "iteration": 3,
+      "n_fit": 120,
+      "priors": [
+       0.693069306930693,
+       0.297029702970297,
+       0.009900990099009901
+      ],
+      "nll_before_m": -13926.956926826679,
+      "ls_cost": 2261.656282442722,
+      "nfev": 4
+     }
+    ],
+    "final_ls": {
+     "cost": 2261.656282442722,
+     "nfev": 4,
+     "status": 2,
+     "message": "`ftol` termination condition is satisfied.",
+     "n_residuals": 3736,
+     "n_params": 373,
+     "n_fit_tracks": 120,
+     "n_extra_rows": 0,
+     "runtime_s": 0.228,
+     "observed_times": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "schur_singular_values": [
+      70236609.64721145,
+      68033426.56792507,
+      64747219.56402183,
+      63820081.34798544,
+      61196705.427519575,
+      57710539.48374725,
+      52678772.74947977,
+      50323408.83038522,
+      46155827.12811991,
+      44055315.17593664,
+      3716197.5048974445,
+      1153807.9894168442,
+      965617.3938339207
+     ],
+     "schur_condition": 72.7375149782064,
+     "axis_sigma_deg": 0.07900191650374072
+    },
+    "priors": [
+     0.693069306930693,
+     0.297029702970297,
+     0.009900990099009901
+    ],
+    "training_nll": -13926.956928050315,
+    "n_moving": 120,
+    "n_moving_gained_vs_first_estep": 0,
+    "n_moving_lost_vs_first_estep": 0,
+    "seed_training_nll": [
+     -13926.956958324765
+    ]
+   },
+   "observability": {
+    "kind": "prismatic",
+    "n_moving_tracks": 120,
+    "q_span": 0.12007894712868371,
+    "q_units": "m",
+    "span_over_sigma": 602.5702545892844,
+    "schur_condition": 72.7375149782064,
+    "axis_sigma_deg": 0.07900191650374072,
+    "hinge_line_sigma_m": null,
+    "moving_obs_per_camera_time": {
+     "cam_001": [
+      49,
+      52,
+      45,
+      51,
+      54,
+      54,
+      52,
+      55,
+      51,
+      53,
+      52,
+      54
+     ],
+     "cam_002": [
+      47,
+      47,
+      46,
+      54,
+      49,
+      56,
+      52,
+      56,
+      54,
+      49,
+      56,
+      54
+     ]
+    },
+    "moving_support_extent_m": [
+     0.2605431957266193,
+     0.16030175131884541,
+     0.05623221852318471
+    ],
+    "moving_support_extent_convention": "5-95 percentile range per world axis",
+    "degeneracy_flags": []
+   },
+   "oracle_diagnostic_only": {
+    "oracle_diagnostic": true,
+    "axis_error_deg": 0.09130400805649556
+   }
+  },
+  "revolute": {
+   "joint_type": "revolute",
+   "joint_axis_world": [
+    0.9647564365345723,
+    -0.0015363522108420532,
+    -0.2631399965550621
+   ],
+   "joint_origin_world": [
+    13.406670991454964,
+    -0.18930114733720066,
+    49.25044834256376
+   ],
+   "origin_convention": "point on hinge line closest to the moving-support centroid; location along the axis is a gauge",
+   "sign_convention": "(u, q) ~ (-u, -q); exported axis has a positive largest-magnitude component",
+   "q_units": "rad",
+   "q": [
+    0.0,
+    -6.290709651169246e-05,
+    -0.00021333024609626242,
+    -0.0004384917131539165,
+    -0.0007094310819672193,
+    -0.0010215318236319864,
+    -0.0013422946641796565,
+    -0.0016553937992986715,
+    -0.0019305362858663816,
+    -0.0021551139624078346,
+    -0.002305458948315501,
+    -0.0023548715430711576
+   ],
+   "q_valid": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "q_uncertainty": [
+    0.0,
+    4.243544450176438e-06,
+    5.155189168400364e-06,
+    7.244988225891657e-06,
+    1.0616450106664275e-05,
+    1.4639768341686666e-05,
+    1.8956903496187865e-05,
+    2.3179136038373288e-05,
+    2.694932022719329e-05,
+    3.003838002024384e-05,
+    3.211205100604823e-05,
+    3.276223960638711e-05
+   ],
+   "reference_time_index": 0,
+   "timestamps_s": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1
+   ],
+   "rgbd_frame_index": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "source_frame_index": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22
+   ],
+   "n_moving_tracks": 120,
+   "world_frame": "calibrated reconstruction world (T_WC of each physical camera)",
+   "transform_convention": "A_H(q) maps canonical (q_ref=0) world points to world points at q",
+   "diagnostics": {
+    "em_history": [
+     {
+      "iteration": 0,
+      "n_fit": 120,
+      "priors": [
+       0.693069306930693,
+       0.297029702970297,
+       0.009900990099009901
+      ],
+      "nll_before_m": -13677.155066484072,
+      "ls_cost": 2268.996772821462,
+      "nfev": 60
+     },
+     {
+      "iteration": 1,
+      "n_fit": 120,
+      "priors": [
+       0.693069306930693,
+       0.297029702970297,
+       0.009900990099009901
+      ],
+      "nll_before_m": -13920.872156362242,
+      "ls_cost": 2263.2136862739176,
+      "nfev": 60
+     },
+     {
+      "iteration": 2,
+      "n_fit": 120,
+      "priors": [
+       0.693069306930693,
+       0.297029702970297,
+       0.009900990099009901
+      ],
+      "nll_before_m": -13925.623858676488,
+      "ls_cost": 2261.947770382394,
+      "nfev": 60
+     },
+     {
+      "iteration": 3,
+      "n_fit": 120,
+      "priors": [
+       0.693069306930693,
+       0.297029702970297,
+       0.009900990099009901
+      ],
+      "nll_before_m": -13926.664024771046,
+      "ls_cost": 2261.7691117538448,
+      "nfev": 60
+     }
+    ],
+    "final_ls": {
+     "cost": 2261.7691117538448,
+     "nfev": 60,
+     "status": 0,
+     "message": "The maximum number of function evaluations is exceeded.",
+     "n_residuals": 3736,
+     "n_params": 375,
+     "n_fit_tracks": 120,
+     "n_extra_rows": 0,
+     "runtime_s": 27.4,
+     "observed_times": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "schur_singular_values": [
+      182486962995.1176,
+      176821297417.21353,
+      168338585466.61832,
+      165902524252.89114,
+      159086565733.28418,
+      150053028434.2016,
+      136992216790.14372,
+      130889349826.04689,
+      120057653687.64944,
+      114630190779.85324,
+      9652449505.258104,
+      1145028.241502095,
+      374.1424028928754,
+      6.433866664604721,
+      0.0006918450404815863
+     ],
+     "schur_condition": 263768549772489.97,
+     "axis_sigma_deg": 22.588338268098056,
+     "hinge_line_sigma_m": 0.051723390871260176
+    },
+    "priors": [
+     0.693069306930693,
+     0.297029702970297,
+     0.009900990099009901
+    ],
+    "training_nll": -13926.81528678435,
+    "n_moving": 120,
+    "n_moving_gained_vs_first_estep": 0,
+    "n_moving_lost_vs_first_estep": 0,
+    "seed_training_nll": [
+     7256.566266007023,
+     -13677.239192094272,
+     -12590.75428145866,
+     7247.9699709634115,
+     7248.3886019647825
+    ]
+   },
+   "observability": {
+    "kind": "revolute",
+    "n_moving_tracks": 120,
+    "q_span": 0.0023548715430711576,
+    "q_units": "rad",
+    "span_over_sigma": 124.2223733187601,
+    "schur_condition": 263768549772489.97,
+    "axis_sigma_deg": 22.588338268098056,
+    "hinge_line_sigma_m": 0.051723390871260176,
+    "moving_obs_per_camera_time": {
+     "cam_001": [
+      49,
+      52,
+      45,
+      51,
+      54,
+      54,
+      52,
+      55,
+      51,
+      53,
+      52,
+      54
+     ],
+     "cam_002": [
+      47,
+      47,
+      46,
+      54,
+      49,
+      56,
+      52,
+      56,
+      54,
+      49,
+      56,
+      54
+     ]
+    },
+    "moving_support_extent_m": [
+     0.2605631873273795,
+     0.16019206746526024,
+     0.05614377933986755
+    ],
+    "moving_support_extent_convention": "5-95 percentile range per world axis",
+    "hinge_radius_m": {
+     "min": 50.934930113017394,
+     "median": 50.994455735051226,
+     "max": 51.05739827200379
+    },
+    "hinge_radius_over_extent": 195.70859666749564,
+    "degeneracy_flags": [
+     "small_arc_lt_2deg",
+     "remote_hinge_approximates_translation"
+    ]
+   },
+   "oracle_diagnostic_only": {
+    "oracle_diagnostic": true,
+    "axis_error_deg": 89.91197346784381
+   }
+  }
+ },
+ "decision": "ambiguous/unobservable",
+ "coordinate_conventions": {
+  "T_AB": "maps B to A, column vectors",
+  "twist": "[omega; v]",
+  "units": "m, rad, s"
+ }
+}
